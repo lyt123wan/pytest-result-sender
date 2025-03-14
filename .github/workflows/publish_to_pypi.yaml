@@ -1,4 +1,4 @@
-name: documentation
+name: Publish Python 🐍 distributions 👛 to PyPI
 
 on:
   push:
@@ -6,12 +6,12 @@ on:
       - '*'
 
 jobs:
-
   build-publish:
     name: Build and Publish Python 🐍 distributions 👛 to PyPI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v2
         with:
@@ -28,4 +28,3 @@ jobs:
         uses: pypa/gh-action-pypi-publish@master
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
-
